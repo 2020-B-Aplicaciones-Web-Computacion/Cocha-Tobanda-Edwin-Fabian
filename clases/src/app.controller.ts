@@ -10,7 +10,7 @@ export class AppController {
     return this.appService.getHello();
   }
 }
-
+/*
 abstract class Nombre {
   public nombrePropiedad?: string; // undefined
   private apellidoPropiedad: string = 'Eguez';
@@ -56,7 +56,38 @@ abstract class Nombre {
   static funcionPublica(): string {
     return 'string';
   }
+}*/
+/*
+//VARIABLES
+  //MUTABLES (REASIGNABLES)
+//var variableUno  --Recomendable no usar
+let variableDos
+  //IMNUTABLES (NO PUEDEN SER REASIGNADAS)
+const variableTres =2
+ */
 
+//Tipos de variables
+  const texto:string = "";
+  const testoConComillassimples:string = '';
+  const numeroEntero = 1;
+  const numeroFlotante = 1.2;
+  const soyEstudiante: boolean = true;
+  const fecha: Date = new Date();
+  const  noDefinido = undefined;
+  const noHayNada = null;
 
+  class Usuario {
+    constructor (
+        public nombre: string,
+        public apellido:string
+    ){
 
-}
+    }
+
+  }
+  const usuario: Usuario = new Usuario ('Edwin', 'Cocha');
+  usuario.nombre = 'Fabian';
+
+  interface UsuarioInterface{
+
+  }

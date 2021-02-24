@@ -31,8 +31,22 @@ export class UsuarioController {
         @Res({passthrough: true})
             response
     ) {
-        console.log(parametrosRuta);
+        //console.log(parametrosRuta);
         response.header('nueva-header', 'otro valor')
         return 'ok';
+    }
+
+    @Get('setear-nombre/:nombre')
+    setearNombre(
+        @Param()
+            parametrosRuta,
+        @Req()
+            request,
+        @Res({passthrough: true})
+            response,
+    ) {
+        console.log(request.cookies);
+        response.cookie('nombreUsuario', parametrosRuta.nombre)
+        return 'Cookie con nombre' + parametrosRuta.nombre + 'seteada';
     }
 }

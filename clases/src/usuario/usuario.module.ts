@@ -1,16 +1,20 @@
-import { Module } from '@nestjs/common';
-import {UsuarioController} from "./usuario.controller";
-
+import {Module} from '@nestjs/common';
+import {UsuarioController} from './usuario.controller';
+// @Decorador()
 @Module({
-    imports: [//Modulos
-         ],
-    controllers: [//AppController
+    imports: [ // Modulos
+
+    ],
+    controllers: [ // Controladores
         UsuarioController
     ],
-    providers: [//AppService
+    providers: [ // Servicios DECLARADOS
+
     ],
-    exports: [
+    exports: [ // Servicios EXPORTADOS
 
     ],
 })
-export class UsuarioModule {}
+export class UsuarioModule {
+
+}

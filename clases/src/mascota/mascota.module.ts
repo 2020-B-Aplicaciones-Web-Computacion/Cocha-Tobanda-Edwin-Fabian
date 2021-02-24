@@ -1,13 +1,16 @@
-import { Module } from '@nestjs/common';
-
+import {Module} from '@nestjs/common';
+// @Decorador()
 @Module({
-    imports: [//Modulos
+    imports: [ // Modulos
+
     ],
-    controllers: [//AppController
+    controllers: [ // Controladores
+
     ],
-    providers: [//AppService
+    providers: [ // Servicios DECLARADOS
+
     ],
-    exports: [
+    exports: [ // Servicios EXPORTADOS
 
     ],
 })

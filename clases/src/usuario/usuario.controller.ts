@@ -24,18 +24,19 @@ export class UsuarioController {
         return '<h1>HOLA MUNDO</h1> <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Escudo_de_la_Escuela_Polit%C3%A9cnica_Nacional.png" alt="">'
     }
 
-    @Post('parametros-ruta/:numeroUno/:numeroDos')
+    @Post('parametros-ruta/:numero_Uno/:numero_Dos')
     parametrosRuta(
         @Param()
             parametrosRuta,
         @Res({passthrough: true})
             response
     ) {
-        //console.log(parametrosRuta);
-        response.header('nueva-header', 'otro valor')
-        return 'ok';
+        console.log(parametrosRuta);
+        let resp=parseInt(parametrosRuta.numero_Uno) + parseInt(parametrosRuta.numero_Dos);
+        response.header('nueva-header', resp);
+        return "Ok";
     }
-
+/*
     @Get('setear-nombre/:nombre')
     setearNombre(
         @Param()
@@ -48,5 +49,5 @@ export class UsuarioController {
         console.log(request.cookies);
         response.cookie('nombreUsuario', parametrosRuta.nombre)
         return 'Cookie con nombre' + parametrosRuta.nombre + 'seteada';
-    }
+    }*/
 }

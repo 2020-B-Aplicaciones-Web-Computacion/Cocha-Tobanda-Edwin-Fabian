@@ -13,7 +13,7 @@ export class AppController {
 }
 
 // Clases - TYPESCRIPT
-/**
+/*
  abstract class Nombre {
     public nombrePropiedad?: string; // undefined
     private apellidoPropiedad: string = 'Eguez';
@@ -43,12 +43,12 @@ export class AppController {
     }
 }
  */
+/*
 // VARIABLES PRIMITIVAS
 
 // MUTABLES (REASIGNAR "=")
 // var variableUno
 
-/*
 let variableDos = 3;
 variableDos = 1; // OK
 // INMUTABLES (NO PUEDEN SER REASIGNADAS "=")
@@ -74,23 +74,24 @@ class Usuario {
     ) {
     }
 }
-const usuario: Usuario = new Usuario('Adrian', 'Eguez');
-usuario.nombre = 'Vicente';
-usuario.apellido = 'Sarzosa';
+const usuario: Usuario = new Usuario('Edwin', 'Cocha');
+usuario.nombre = 'Edwin';
+usuario.apellido = 'Cocha';
 interface UsuarioInterface {
     nombre: string;
     apellido: string;
     edad?: number; // ? => Opcional // Valor por defecto es undefined
 }
 let objetoUsuario: UsuarioInterface = {
-    nombre: 'Adrian',
-    apellido: 'Eguez'
+    nombre: 'Edwin',
+    apellido: 'Cocha'
 };
 objetoUsuario.nombre;
 objetoUsuario.apellido;
 objetoUsuario.edad;
 console.log(usuario);
 console.log(objetoUsuario);
+/*
 // PUNTEROS REFERENCIAS
 // PRIMITIVAS
 let edadAntigua = 22;

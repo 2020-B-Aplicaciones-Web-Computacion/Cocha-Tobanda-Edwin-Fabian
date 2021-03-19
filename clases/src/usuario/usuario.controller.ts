@@ -18,7 +18,7 @@ export class UsuarioController {
         console.log(headers);
         // return 'Hola mundo http';
         // return {
-        //     nombre:'Adrian'
+        //     nombre:'Edwin'
         // }
         // return '<xml>Hola Mundo</xml>'
         return '<h1>HOLA MUNDO</h1> <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Escudo_de_la_Escuela_Polit%C3%A9cnica_Nacional.png" alt="">'

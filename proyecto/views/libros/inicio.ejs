@@ -18,7 +18,7 @@
 <% } %>
 
 
-<a href="/libro/crear-libro">
+<a href="/libro/nuevo-libro">
     <button>NUEVO</button>
 </a>
 
@@ -52,6 +52,7 @@
         </tr>
     <% } %>
 </table>
+<br>
 <% if(pag > 1){ %>
 <a href="/libro/libros?autor=<%=parametrosConsulta.autor%>&&pag=<%= pag - 1 %>">
     <button><</button>
@@ -62,7 +63,7 @@
 <a href="/libro/libros?autor=<%=parametrosConsulta.autor%>&&pag=<%= pag + 1 %>">
     <button>>></button>
 </a>
-<br>
+<br><br>
 <a href="/autor/autores">
     <button>IR A AUTORES</button>
 </a>

@@ -1,4 +1,4 @@
-<form action="/libro/crear-libro" method="post">
+<form action="/libro/nuevo-libro" method="post">
     <label for="isbn">ISBN</label>
     <input id="isbn" type="text" name="isbn">
     <br>
@@ -15,10 +15,10 @@
     <input id="pais" type="text" name="pais">
     <br>
     <label for="autor">Id Autor</label>
-    <input id="autor" type="text" name="autor" placeholder="<%= libro.fkAutor %>">
+    <input id="autor" type="text" name="autor">
     <br>
     <button type="submit">Crear</button>
-    <button type="reset">Reset</button>
+    <button type="reset">Limpiar</button>
 </form>
 <a href="/libro/libros">
     <button>Cancelar</button>

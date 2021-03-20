@@ -1,0 +1,67 @@
+<form action="/autor/autores" method="get">
+    <label for="busqueda">Buscar</label>
+    <input id="busqueda" type="text" name="busqueda">
+
+    <button type="submit"> Buscar </button>
+</form>
+
+<style>
+    .mensaje {
+        border: solid 1px #c3a062;
+        width: 100%;
+    }
+</style>
+
+<% if(parametrosConsulta.mensaje){ %>
+    <div class="mensaje">
+        <%= parametrosConsulta.mensaje %>
+    </div>
+<% } %>
+
+<a href="/autor/crear-autor">
+    <button>CREAR</button>
+</a>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>País</th>
+        <th>Género</th>
+        <th>Edad</th>
+    </tr>
+    <% for (let autor of datos[0]){ %>
+        <!--<% let fk = autor.id%> -->
+        <% let id = autor.id %>
+
+        <tr>
+
+            <td><%= autor.nombre_autor %></td>
+            <td><%= autor.apellido_autor %></td>
+            <td><%= autor.pais_autor %></td>
+            <td><%= autor.genero_autor %></td>
+            <td><%= autor.edad_autor %></td>
+            <td>
+                <a href="/autor/actualizar?id=<%=id%>">
+                    <button>Editar</button>
+                </a>
+                <a href="/autor/eliminar?id=<%=id%>">
+                    <button>Eliminar</button>
+                </a>
+                <!--<a href="/procesador/procesadores?fabricante=<%=fk%>">
+                    <button>Procesadores</button>
+                </a> -->
+            </td>
+        </tr>
+
+    <% } %>
+</table>
+
+<% if(page>1){%>
+<a href="/autor/autores?page=<%=page-1%>">
+    <button>ANTERIOR</button>
+</a>
+<%}%>
+<a href="/autor/autores?page=<%=page+1%>">
+    <button>SIGUIENTE</button>
+</a>

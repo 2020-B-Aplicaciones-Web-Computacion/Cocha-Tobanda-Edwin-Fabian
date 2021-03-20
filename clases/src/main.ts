@@ -19,7 +19,7 @@ async function bootstrap() {
   }));
   app.use (cookieParser());
   app.use(helmet());
-  app.set('view engine', 'ejs');
+  app.set('views engine', 'ejs');
   await app.listen(3001);
 }
 bootstrap();

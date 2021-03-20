@@ -1,7 +1,6 @@
 <form action="/autor/autores" method="get">
     <label for="busqueda">Buscar</label>
     <input id="busqueda" type="text" name="busqueda">
-
     <button type="submit"> Buscar </button>
 </form>
 
@@ -19,16 +18,18 @@
 <% } %>
 
 <a href="/autor/crear-autor">
-    <button>CREAR</button>
+    <button>NUEVO</button>
 </a>
 
 <table>
     <tr>
+        <th>Id</th>
         <th>Nombre</th>
         <th>Apellido</th>
         <th>País</th>
         <th>Género</th>
         <th>Edad</th>
+        <th>Acción</th>
     </tr>
     <% for (let autor of datos[0]){ %>
         <!--<% let fk = autor.id%> -->
@@ -43,7 +44,7 @@
             <td><%= autor.edad_autor %></td>
             <td>
                 <a href="/autor/actualizar?id=<%=id%>">
-                    <button>Editar</button>
+                    <button>Actualizar</button>
                 </a>
                 <a href="/autor/eliminar?id=<%=id%>">
                     <button>Eliminar</button>
@@ -56,12 +57,20 @@
 
     <% } %>
 </table>
-
+<br>
 <% if(page>1){%>
 <a href="/autor/autores?page=<%=page-1%>">
-    <button>ANTERIOR</button>
+    <button><<</button>
 </a>
 <%}%>
+<label for="numpag">Pág:</label>
+<input id="numpag" type="text" name="numpag" placeholder="<%=page%>">
+
 <a href="/autor/autores?page=<%=page+1%>">
-    <button>SIGUIENTE</button>
+    <button>>></button>
 </a>
+<br> <br>
+<a href="/libro/libros">
+    <button>IR A LIBROS</button>
+</a>
+

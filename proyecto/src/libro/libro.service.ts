@@ -7,7 +7,7 @@ import {LibroEntity} from "./libro.entity";
 export class LibroService{
     constructor(
         @InjectRepository(LibroEntity)
-        public procesadorEntity: Repository<LibroEntity>
+        public libroEntity: Repository<LibroEntity>
     ){
 
     }

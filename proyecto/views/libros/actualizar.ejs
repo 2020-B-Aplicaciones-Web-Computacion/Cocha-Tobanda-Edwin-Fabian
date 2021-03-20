@@ -1,0 +1,26 @@
+<% let libro= datos %>
+<form action="/libro/crear-libro" method="post">
+    <label for="isbn">ISBN</label>
+    <input id="isbn" type="text" name="isbn" placeholder="<%= libro.ISBN %>">
+    <br>
+    <label for="titulo">Título</label>
+    <input id="titulo" type="text" name="titulo" placeholder="<%= libro.titulo %>">
+    <br>
+    <label for="anio">Año Publicación</label>
+    <input id="anio" type="text" name="anio" placeholder="<%= libro.anio_lanzamiento %>">
+    <br>
+    <label for="idioma">Idioma</label>
+    <input id="idioma" type="text" name="idioma" placeholder="<%= libro.idioma %>">
+    <br>
+    <label for="pais">País Publicación</label>
+    <input id="pais" type="text" name="pais" placeholder="<%= libro.pais_publicacion %>">
+    <br>
+    <label for="autor">Id Autor</label>
+    <input id="autor" type="text" name="autor" placeholder="<%= libro.fkAutor %>">
+    <br>
+    <button type="submit">Crear</button>
+    <button type="reset">Reset</button>
+</form>
+<a href="/libro/libros">
+    <button>Cancelar</button>
+</a>

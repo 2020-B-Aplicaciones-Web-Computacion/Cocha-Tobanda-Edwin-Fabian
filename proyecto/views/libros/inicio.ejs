@@ -1,0 +1,68 @@
+<form action="/libro/libros" method="get">
+    <label for="busqueda">Buscar</label>
+    <input id="busqueda" type="text" name="busqueda">
+    <button type="submit">Buscar</button>
+</form>
+
+<style>
+    .mensaje {
+        border: solid 1px #c3a062;
+        width: 100%;
+    }
+</style>
+
+<% if(parametrosConsulta.mensaje){ %>
+    <div class="mensaje">
+        <%= parametrosConsulta.mensaje %>
+    </div>
+<% } %>
+
+
+<a href="/libro/crear-libro">
+    <button>NUEVO</button>
+</a>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>ISBN</th>
+        <th>Título</th>
+        <th>Año</th>
+        <th>Idioma
+        <th>País</th>
+        <th>Acciones</th>
+    </tr>
+    <% for (let libro of datos[0]){ %>
+        <% let id = libro.id %>
+        <tr>
+            <td><%= libro.id %></td>
+            <td><%= libro.ISBN %></td>
+            <td><%= libro.titulo %></td>
+            <td><%= libro.anio_lanzamiento %></td>
+            <td><%= libro.idioma %></td>
+            <td><%= libro.pais_publicacion %></td>
+            <td>
+                <a href="/libro/actualizar?id=<%= id %>">
+                    <button>Actualizar</button>
+                </a>
+                <a href="/libro/eliminar?id=<%= id %>">
+                    <button>Eliminar</button>
+                </a>
+            </td>
+        </tr>
+    <% } %>
+</table>
+<% if(pag > 1){ %>
+<a href="/libro/libros?autor=<%=parametrosConsulta.autor%>&&pag=<%= pag - 1 %>">
+    <button><</button>
+</a>
+<% } %>
+<label for="numpag">Pág:</label>
+<input id="numpag" type="text" name="numpag" placeholder="<%=pag%>">
+<a href="/libro/libros?autor=<%=parametrosConsulta.autor%>&&pag=<%= pag + 1 %>">
+    <button>>></button>
+</a>
+<br>
+<a href="/autor/autores">
+    <button>IR A AUTORES</button>
+</a>

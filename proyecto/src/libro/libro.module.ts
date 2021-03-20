@@ -2,6 +2,7 @@ import {Module} from "@nestjs/common";
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {LibroEntity} from "./libro.entity";
 import {LibroService} from "./libro.service";
+import {LibroController} from "./libro.controller";
 
 
 @Module({
@@ -12,7 +13,7 @@ import {LibroService} from "./libro.service";
         )
     ],
     controllers: [
-        //LibroController
+        LibroController
     ],
     providers: [
         LibroService

@@ -1,9 +1,10 @@
-import {Controller, Get, Req, Res, Headers, Post, Param, Body, Query} from '@nestjs/common';
+import {Controller, Get, Header, HttpCode, Req, Res, Headers, Post, Param, Body, Query} from '@nestjs/common';
 import {FindConditions, FindManyOptions, Like} from "typeorm";
 import {AutorService} from "./autor.service";
 import {AutorEntity} from "./autor.entity";
+import {isEmpty} from "@nestjs/common/utils/shared.utils";
 
-@Controller('autore')
+@Controller('autor')
 export class AutorController {
     constructor(
         private _autorService: AutorService
@@ -12,6 +13,27 @@ export class AutorController {
     }
 
     private page = 1
+    @Get('hola')
+    @HttpCode(200)
+    @Header('Cache-Control', 'none')
+    @Header('EPN', 'SISTEMAS')
+    hola(
+        @Req()
+            request,
+        @Headers()
+            headers,
+        // @Res()
+        // response // Ustedes deben devolver la respuesta
+    ) {
+        // response.send('HOLA DESDE SEND')
+        console.log(headers);
+        // return 'Hola mundo http';
+        // return {
+        //     nombre:'Edwin'
+        // }
+        // return '<xml>Hola Mundo</xml>'
+        return '<h1>HOLA MUNDO</h1> <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Escudo_de_la_Escuela_Polit%C3%A9cnica_Nacional.png" alt="">'
+    }
 
     @Get('crear-autor')
     crearAutorVista(
@@ -141,8 +163,11 @@ export class AutorController {
 
         let consultaWhereOR: FindConditions<AutorEntity>[] = [
             {
+                nombre_autor: Like(
+                    parametrosConsulta.busqueda ? '%'+parametrosConsulta.busqueda+'%' : '%%'
+                ),
                 apellido_autor: Like(
-                    parametrosConsulta.busqueda ? parametrosConsulta.busqueda : '%%'
+                    parametrosConsulta.busqueda ? '%'+parametrosConsulta.busqueda+'%' : '%%'
                 ),
             }
         ]

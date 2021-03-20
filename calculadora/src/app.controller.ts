@@ -80,6 +80,7 @@ export class AppController {
       @Req()
           request,
       @Headers()
+
           parametrosHeader,
       @Res({passthrough: true})
           response

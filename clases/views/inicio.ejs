@@ -1,0 +1,61 @@
+<!-- > views-->
+<!--    inicio.ejs-->
+
+<% const arreglo = [1, 2, 3, 4, 5] //Puedo escribir codigo Javascript!  %>
+<% const nombre = 'Edwin' %>
+<% const numeroTitulo = 1 + 10 %>
+<h1><%= nombre %> - <%= numeroTitulo %></h1>
+<ul>
+    <% for(let numero of arreglo){ %>
+        <li>Numero: <%= numero %></li>
+    <% } %>
+</ul>
+
+<style>
+    .mensaje{
+        border: solid 1px #c3a062;
+        width: 100%;
+        margin: 10px;
+    }
+</style>
+<% if(parametrosConsulta.mensaje){ %>
+    <div class="mensaje">
+        <%= parametrosConsulta.mensaje %>
+    </div>
+<% }%>
+<a href="/usuario/crear-usuario">
+    <button>CREAR</button>
+</a>
+
+
+<form action="/usuario/usuarios" method="get">
+    <label for="busqueda">Búsqueda</label>
+    <input id="busqueda" type="text" name="busqueda">
+
+    <button type="submit">
+        Buscar
+    </button>
+</form>
+
+
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Acciones</th>
+    </tr>
+    <% for (let usuario of datos[0]){ %>
+        <tr>
+            <td><%= usuario.id %></td>
+            <td><%= usuario.nombre %></td>
+            <td><%= usuario.apellido %></td>
+            <td>
+                <button>Editar</button>
+                <button>Eliminar</button>
+            </td>
+        </tr>
+    <% } %>
+</table>
+<p>Numero total de registros: <%= datos[1]%></p>

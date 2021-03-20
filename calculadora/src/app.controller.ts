@@ -104,11 +104,11 @@ export class AppController {
   //Puntaje
   revisarPuntaje(request, resultado,response) {
     let valorCookie = parseInt(request.cookies.puntaje);
-    if (!valorCookie || valorCookie < 0) {
-      valorCookie = 100;
-    }
-    valorCookie-=resultado;
-    response.cookie('puntaje',valorCookie.toString());
+    if(!request.cookies.puntaje||valorCookie<0)
+      valorCookie=100;
+
+    valorCookie -= resultado;
+    response.cookie('puntaje', valorCookie.toString());
     if(valorCookie<0)
       return "Felicidades " + request.cookies.nombreUsuario + " ganaste";
     else

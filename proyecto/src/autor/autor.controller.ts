@@ -12,28 +12,7 @@ export class AutorController {
 
     }
 
-    private page = 1
-    @Get('hola')
-    @HttpCode(200)
-    @Header('Cache-Control', 'none')
-    @Header('EPN', 'SISTEMAS')
-    hola(
-        @Req()
-            request,
-        @Headers()
-            headers,
-        // @Res()
-        // response // Ustedes deben devolver la respuesta
-    ) {
-        // response.send('HOLA DESDE SEND')
-        console.log(headers);
-        // return 'Hola mundo http';
-        // return {
-        //     nombre:'Edwin'
-        // }
-        // return '<xml>Hola Mundo</xml>'
-        return '<h1>HOLA MUNDO</h1> <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Escudo_de_la_Escuela_Polit%C3%A9cnica_Nacional.png" alt="">'
-    }
+    public page = 1
 
     @Get('crear-autor')
     crearAutorVista(
@@ -94,8 +73,6 @@ export class AutorController {
         @Res()
             response
     ) {
-
-
         let entity = {}
         if (parametrosCuerpo.nombre) {
             entity['nombre_autor'] = parametrosCuerpo.nombre

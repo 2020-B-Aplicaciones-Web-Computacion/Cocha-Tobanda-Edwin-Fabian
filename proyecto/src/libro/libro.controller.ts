@@ -34,7 +34,7 @@ export class LibroController {
             anio_lanzamiento: parametrosCuerpo.anio,
             idioma: parametrosCuerpo.idioma,
             pais_publicacion: parametrosCuerpo.pais,
-            fkAutor: this.fkAutor
+            fkAutor: parametrosCuerpo.idautor
         });
         response.redirect('/libro/libros?autor='+this.fkAutor+'&&mensaje=Se creó el libro ' +
             parametrosCuerpo.nombre + ' correctamente')
@@ -143,13 +143,11 @@ export class LibroController {
         }
 
 
-        if (parametrosConsulta.fabricante) {
-            this.fkAutor = parametrosConsulta.autor;
-        } else {
-            this.fkAutor = "1"
+        if (parametrosConsulta.idautor) {
+            this.fkAutor = parametrosConsulta.idautor;
         }
 
-        let consultaWhereAND: FindConditions<LibroEntity>[] = [
+        let consultaWhereOR: FindConditions<LibroEntity>[] = [
             {
                 titulo: Like(
                     parametrosConsulta.busqueda ? '%'+parametrosConsulta.busqueda+'%' : '%%'
@@ -161,7 +159,7 @@ export class LibroController {
         ]
 
         let consulta: FindManyOptions<LibroEntity> = {
-            where: consultaWhereAND,
+            where: consultaWhereOR,
             take: take,
             skip: skip,
             order: {

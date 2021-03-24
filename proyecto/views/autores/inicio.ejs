@@ -1,3 +1,8 @@
+<h1>
+    BIENVENIDO A LA BIBLIOTECA "EL LIBRO"
+</h1>
+<h3> LISTA DE AUTORES</h3> <br>
+
 <form action="/autor/autores" method="get">
     <label for="busqueda">Buscar</label>
     <input id="busqueda" type="text" name="busqueda">
@@ -32,7 +37,7 @@
         <th>Acción</th>
     </tr>
     <% for (let autor of datos[0]){ %>
-        <!--<% let fk = autor.id%> -->
+        <% let fk = autor.id%>
         <% let id = autor.id %>
 
         <tr>
@@ -50,9 +55,7 @@
                 <a href="/autor/eliminar?id=<%=id%>">
                     <button>Eliminar</button>
                 </a>
-                <!--<a href="/procesador/procesadores?fabricante=<%=fk%>">
-                    <button>Procesadores</button>
-                </a> -->
+
             </td>
         </tr>
 

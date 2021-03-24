@@ -1,23 +1,21 @@
+<br><h3> ACTUALIZAR LIBROS</h3><br>
 <% let libro= datos %>
-<form action="/libro/actualizar" method="post">
+<form action="/libro/actualizar?id=<%= params.id %>" method="post">
     <label for="isbn">ISBN</label>
     <input id="isbn" type="text" name="isbn" placeholder="<%= libro.ISBN %>">
-    <br>
+    <br><br>
     <label for="titulo">Título</label>
     <input id="titulo" type="text" name="titulo" placeholder="<%= libro.titulo %>">
-    <br>
+    <br><br>
     <label for="anio">Año Publicación</label>
     <input id="anio" type="text" name="anio" placeholder="<%= libro.anio_lanzamiento %>">
-    <br>
+    <br><br>
     <label for="idioma">Idioma</label>
     <input id="idioma" type="text" name="idioma" placeholder="<%= libro.idioma %>">
-    <br>
+    <br><br>
     <label for="pais">País Publicación</label>
     <input id="pais" type="text" name="pais" placeholder="<%= libro.pais_publicacion %>">
-    <br>
-    <label for="autor">Id Autor</label>
-    <input id="autor" type="text" name="autor" placeholder="<%= libro.fkAutor %>">
-    <br>
+    <br><br>
     <button type="submit">Actualizar</button>
     <button type="reset">Limpiar</button>
 </form>

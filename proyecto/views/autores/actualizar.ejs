@@ -1,23 +1,24 @@
+<br><h3> ACTUALIZAR AUTORES</h3><br>
 <% let autor = datos %>
 <form action="/autor/actualizar?id=<%= params.id %>" method="post">
     <label for="nombre">Nombre</label>
     <input id="nombre" type="text" name="nombre" placeholder="<%= autor.nombre_autor %>">
-    <br>
+    <br><br>
     <label for="apellido">Apellido</label>
     <input id="apellido" type="text" name="apellido" placeholder="<%= autor.apellido_autor %>">
-    <br>
+    <br><br>
     <label for="pais">País</label>
     <input id="pais" type="text" name="pais" placeholder="<%= autor.pais_autor %>">
-    <br>
+    <br><br>
     <label for="genero">Género</label>
     <input id="genero" type="text" name="genero" placeholder="<%= autor.genero_autor %>">
-    <br>
+    <br><br>
     <label for="edad">Edad</label>
     <input id="edad" type="text" name="edad" placeholder="<%= autor.edad_autor %>">
-    <br>
+    <br><br>
 
     <button type="submit">Actualizar</button>
-    <!--<button type="reset">Limpiar</button>-->
+    <button type="reset">Limpiar</button>
 </form>
 <a href="/autor/autores">
     <button>Cancelar</button>
